@@ -6,3 +6,10 @@ RESET
     padding: 0;
     box-sizing: border-box;
 }
+/***************
+GENERAL
+***************/
+#container {
+    width: 80%;
+    margin: 50px auto;
+}

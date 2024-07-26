@@ -1,3 +1,4 @@
+//object array
 const teamMembers = [
     {
         name: "Wayne Barnett",
@@ -31,8 +32,17 @@ const teamMembers = [
     }
 ]
 
-teamMembers.forEach(function(members) {
+// salva su console.log 
+teamMembers.forEach(function members (members) {
     console.log(`Name: ${members.name}`);
     console.log(`Role: ${members.role}`);
     console.log(`Image: ${members.image}`);
     });
+
+// stampa su html
+const container = document.getElementById('container');
+teamMembers.forEach(function members (member) {
+    const memberInfo = document.createElement('div');
+    memberInfo.innerHTML = `Name: ${member.name},<br> Role: ${member.role},<br> Image: ${member.image}`;
+    container.append(memberInfo);
+});
