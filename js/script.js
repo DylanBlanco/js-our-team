@@ -1,48 +1,62 @@
 //object array
 const teamMembers = [
     {
-        name: "Wayne Barnett",
-        role: "Founder & CEO",
-        image: "wayne-barnett-founder-ceo.jpg",
+        name: `Wayne Barnett`,
+        role: `Founder & CEO`,
+        image: `wayne-barnett-founder-ceo.jpg`,
     },
     {
-        name: "Angela Caroll",
-        role: "Chief Editor",
-        image: "angela-caroll-chief-editor.jpg",
+        name: `Angela Caroll`,
+        role: `Chief Editor`,
+        image: `angela-caroll-chief-editor.jpg`,
     },
     {
-        name: "Walter Gordon",
-        role: "Office Manager",
-        image: "walter-gordon-office-manager.jpg",
+        name: `Walter Gordon`,
+        role: `Office Manager`,
+        image: `walter-gordon-office-manager.jpg`,
     },
     {
-        name: "Angela Lopez",
-        role: "Social Media Manager",
-        image: "angela-lopez-social-media-manager.jpg",
+        name: `Angela Lopez`,
+        role: `Social Media Manager`,
+        image: `angela-lopez-social-media-manager.jpg`,
     },
     {
-        name: "Scott Estrada",
-        role: "Developer",
-        image: "scott-estrada-developer.jpg",
+        name: `Scott Estrada`,
+        role: `Developer`,
+        image: `scott-estrada-developer.jpg`,
     },
     {
-        name: "Barbara Ramos",
-        role: "Graphic Designer",
-        image: "barbara-ramos-graphic-designer.jpg",
+        name: `Barbara Ramos`,
+        role: `Graphic Designer`,
+        image: `barbara-ramos-graphic-designer.jpg`,
     }
 ]
-
+const teamContainer = document.getElementById(`team-container`);
 // salva su console.log 
-teamMembers.forEach(function members (members) {
-    console.log(`Name: ${members.name}`);
-    console.log(`Role: ${members.role}`);
-    console.log(`Image: ${members.image}`);
-    });
+for (let i = 0; i < teamMembers.length; i++) {
+    //console.log(`Name`, teamMembers[i]);
 
-// stampa su html
-const container = document.getElementById('container');
-teamMembers.forEach(function members (member) {
-    const memberInfo = document.createElement('div');
-    memberInfo.innerHTML = `Name: ${member.name},<br> Role: ${member.role},<br> Image: ${member.image}`;
-    container.append(memberInfo);
-});
+    console.log(`Name`, teamMembers[i].name);
+    console.log(`Role`, teamMembers[i].role);
+    console.log(`Image`, teamMembers[i].image);
+
+    // stampa su html
+    teamContainer.innerHTML += `
+    <ul>
+        <li>
+            Name: <strong>${teamMembers[i].name}</strong>
+        </li>    
+        <li>
+            Role: <strong>${teamMembers[i].role}</strong>
+        </li>    
+        <li>
+            Image: 
+            <div>
+                <img src="img/${teamMembers[i].image}">
+            </div>
+        </li>
+    </ul>
+    <hr> 
+    `;
+
+}
